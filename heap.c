@@ -18,7 +18,17 @@ typedef struct Heap{
 
 
 void* heap_top(Heap* pq){
-    return NULL;
+int awa;
+int mayor;
+void* mayordata = 0;
+
+for (awa = 0 ; awa < pq->capac ; awa++){
+if ( pq->heapArray[awa].priority > mayor){
+  mayor = pq->heapArray[awa].priority;
+  mayordata = pq->heapArray[awa].data;
+}
+}
+    return mayordata;
 }
 
 
