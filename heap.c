@@ -26,9 +26,13 @@ for (awa = 0 ; awa < pq->capac ; awa++){
 if ( pq->heapArray[awa].priority > mayor){
   mayor = pq->heapArray[awa].priority;
   mayordata = pq->heapArray[awa].data;
+ }
 }
+if (mayordata == NULL){
+    return NULL;}
+else{
+      return mayordata;
 }
-    return mayordata;
 }
 
 

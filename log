@@ -40,3 +40,9 @@ Tue Oct 20 16:03:45 UTC 2020:
  tests:  1|3
 total_score: 10/70
 58a457f
+Tue Oct 20 16:06:35 UTC 2020: 
+ heap.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+ tests:  1|3
+total_score: 10/70
+9715714
