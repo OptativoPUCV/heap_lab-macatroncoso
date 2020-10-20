@@ -1,0 +1,16 @@
+Tue Oct 20 15:17:24 UTC 2020: 
+ heap.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+In file included from test.c:4:0:
+heap.c: In function ‘createHeap’:
+heap.c:37:12: error: unused variable ‘hippieArray’ [-Werror=unused-variable]
+ heapElem * hippieArray = (heapElem*) malloc (sizeof(heapElem));
+            ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+Tue Oct 20 15:19:03 UTC 2020: 
+ heap.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+ tests:  0|4
+total_score: 0/70
+2bd7e30
