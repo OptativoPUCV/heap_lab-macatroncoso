@@ -22,13 +22,15 @@ int awa;
 int mayor;
 void* mayordata = 0;
 
+if (pq->size == 0) return NULL;
+
 for (awa = 0 ; awa < pq->capac ; awa++){
 if ( pq->heapArray[awa].priority > mayor){
   mayor = pq->heapArray[awa].priority;
   mayordata = pq->heapArray[awa].data;
  }
 }
-if (mayordata == 0){
+if ((mayordata == NULL) || mayordata == 0){
     return NULL;}
 else{
       return mayordata;
