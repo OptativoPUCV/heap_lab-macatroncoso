@@ -28,7 +28,7 @@ if ( pq->heapArray[awa].priority > mayor){
   mayordata = pq->heapArray[awa].data;
  }
 }
-if (mayordata == NULL){
+if (mayordata == 0){
     return NULL;}
 else{
       return mayordata;
