@@ -70,10 +70,10 @@ while ((current >0) && (pq->heapArray[(current-1)/2]).priority < priority){
 void heap_pop(Heap* pq){
 
 int aux;
-pq->heapArray[0].data = pq->heapArray[pq->size - 1].data;
 pq->heapArray[0].priority = pq->heapArray[pq->size - 1].priority;
-pq->heapArray[pq->size - 1].priority = 0;
+pq->heapArray[0].data = pq->heapArray[pq->size - 1].data;
 pq->heapArray[pq->size - 1].data = NULL;
+pq->heapArray[pq->size - 1].priority = 0;
 pq->size--;
 if (pq->size >=3){
   if (pq->heapArray[1].priority > pq->heapArray[2].priority){
@@ -84,9 +84,9 @@ if (pq->size >=3){
   }
 } 
 else{
-  int aux2 = pq->heapArray[0].priority;
+  aux = pq->heapArray[0].priority;
    pq->heapArray[0].priority = pq->heapArray[2].priority;
-    pq->heapArray[2].priority = aux2;  
+    pq->heapArray[2].priority = aux;  
 }
 
 
