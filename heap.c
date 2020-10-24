@@ -82,10 +82,11 @@ if (pq->size >=3){
     pq->heapArray[1].priority = aux;     
      
   }
-}else{
-  aux = pq->heapArray[0].priority;
+} 
+else{
+  int aux2 = pq->heapArray[0].priority;
    pq->heapArray[0].priority = pq->heapArray[2].priority;
-    pq->heapArray[2].priority = aux;  
+    pq->heapArray[2].priority = aux2;  
 }
 
 
