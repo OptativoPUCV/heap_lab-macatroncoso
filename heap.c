@@ -37,6 +37,18 @@ else{
 }
 }
 
+int last(Heap * pq){
+int last = 0;
+int awa;
+
+for (awa = 0 ; awa < pq->capac ; awa++){
+if ( pq->heapArray[awa].data != NULL){
+  last = awa;
+ }
+}
+return last;
+}
+
 
 
 void heap_push(Heap* pq, void* data, int priority){
@@ -56,12 +68,32 @@ while ((current >0) && (pq->heapArray[(current-1)/2]).priority < priority){
 
 
 void heap_pop(Heap* pq){
+int thelast = last(pq);
+int aux;
+pq->heapArray[0].data = pq->heapArray[thelast].data;
+pq->heapArray[0].priority = pq->heapArray[thelast].priority;
+pq->heapArray[thelast].priority = 0;
+pq->heapArray[thelast].data = NULL;
+pq->size--;
+if (pq->size >=3){
+  if (pq->heapArray[1].priority > pq->heapArray[2].priority){
+     aux = pq->heapArray[0].priority;
+     pq->heapArray[0].priority = pq->heapArray[1].priority;
+    pq->heapArray[1].priority = aux;     
+     
+  }
+}else{
+  aux = pq->heapArray[0].priority;
+   pq->heapArray[0].priority = pq->heapArray[2].priority;
+    pq->heapArray[2].priority = aux;  
+}
+
 
 }
 
 Heap* createHeap(){
 Heap* hippie = (Heap*) malloc (sizeof(Heap));
-hippie->heapArray = (heapElem*) malloc (3 * sizeof(heapElem));
+hippie->heapArray = (heapElem*) malloc ( 3 * sizeof(heapElem));
 hippie->size = 0;
 hippie->capac = 3;
  return hippie;
